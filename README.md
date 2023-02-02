@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# Modal Component React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+-   [Modal Component React](#modal-component-react)
+    -   [Table of Contents](#table-of-contents)
+    -   [General information](#general-information)
+    -   [Prerequisites](#prerequisites)
+    -   [Installation](#installation)
+    -   [API Reference](#api-reference)
+    -   [Usages](#usages)
+        -   [**without children**](#without-children)
+        -   [**with children**](#with-children)
 
-In the project directory, you can run:
+## General information
 
-### `npm start`
+A Modal component that utilizes ReactDOM.createPortal(). A Portal in React is a component that allows rendering elements into a different component tree from where they are declared.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+for more information see [Portals](https://reactjs.org/docs/portals.html#gatsby-focus-wrapper) in React doc
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+-   <img src="https://img.shields.io/badge/Node-v16.12.0-blue">
+-   <img src="https://img.shields.io/badge/React-v18.2.0-green">
+-   <img src="https://img.shields.io/badge/npm-8.1.0-blue"> or <img src="https://img.shields.io/badge/Yarn-v1.14.0-green">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+To install, you can use npm or yarn:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+   $ npm install Modal-Component-React
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   $ yarn add Modal-Component-React
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Reference
 
-### `npm run eject`
+-   to initialise the modal, you need to import
+    -   `const { isShowing, toggle } = useModal()`
+-   the modal component has several optional and required props
+    -   Required
+        -   `isShowing` type of boolean
+        -   `hide` function for opening and closing
+    -   Optionnal
+        -   `title` can receive a string or component
+        -   `children` can receive one or more components, which will constitute the body
+        -   `classNameBody` if you want to add your own className for the Body
+        -   `keydown` iy you want to use event KeyDown to close Modal
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usages
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **without children**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```Jsx
+import { useModal } from '../Hooks/useModal'
+import '../Styles/App.css'
+import { Modal } from './modal'
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+function App() {
+    const { isShowing, toggle } = useModal()
+    return (
+        <div className="App">
+            <header className="App-header">
+                <button className="modal-toggle" onClick={toggle}>
+                    Show modal
+                </button>
+            </header>
+            <Modal
+                isShowing={isShowing}
+                hide={toggle}
+                title='hello World!!'
+                keydown={{ active: true, key: 'Escape' }}
+            />
+        </div>
+    )
+}
 
-## Learn More
+export default App
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **with children**
 
-### Code Splitting
+```Jsx
+import { useModal } from '../Hooks/useModal'
+import '../Styles/App.css'
+import { Modal } from './modal'
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+function App() {
+    const { isShowing, toggle } = useModal()
+    return (
+        <div className="App">
+            <header className="App-header">
+                <button className="modal-toggle" onClick={toggle}>
+                    Show modal
+                </button>
+            </header>
+            <Modal
+                isShowing={isShowing}
+                hide={toggle}
+                title='hello World!!'
+                classNameBody="your class"
+            >
+                // do something
 
-### Analyzing the Bundle Size
+            </Modal>
+        </div>
+    )
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+export default App
+```
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[def]: #table-of-contents

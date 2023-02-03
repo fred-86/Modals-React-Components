@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
--   [Modal Component React](#modal-component-react)
+-   [Modals-React-Components](#modals-react-components)
     -   [Table of Contents](#table-of-contents)
     -   [General information](#general-information)
     -   [Prerequisites](#prerequisites)
@@ -29,9 +29,9 @@ for more information see [Portals](https://reactjs.org/docs/portals.html#gatsby-
 To install, you can use npm or yarn:
 
 ```
-   $ npm install Modals-React-Components
+   $ npm install @fredmagione/modals-react-components
 
-   $ yarn add Modals-React-Components
+   $ yarn add @fredmagione/modals-react-components
 ```
 
 ## API Reference

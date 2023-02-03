@@ -15,5 +15,5 @@ Object.defineProperty(exports, "useModal", {
     return _useModal.useModal;
   }
 });
-var _modal = require(".Components/modal");
-var _useModal = require(".Hooks/useModal");
+var _modal = require("./Components/modal");
+var _useModal = require("./Hooks/useModal");

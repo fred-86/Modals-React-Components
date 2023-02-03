@@ -3,10 +3,10 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "modal", {
+Object.defineProperty(exports, "Modal", {
   enumerable: true,
   get: function get() {
-    return _modal.modal;
+    return _Modal.Modal;
   }
 });
 Object.defineProperty(exports, "useModal", {
@@ -15,5 +15,5 @@ Object.defineProperty(exports, "useModal", {
     return _useModal.useModal;
   }
 });
-var _modal = require("./Components/modal");
+var _Modal = require("./Components/Modal");
 var _useModal = require("./Hooks/useModal");

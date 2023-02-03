@@ -8,7 +8,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.Modal = Modal;
 var _react = _interopRequireWildcard(require("react"));
 var _reactDom = _interopRequireDefault(require("react-dom"));
-require("./Styles/Modal.css");
+require("../Styles/Modal.css");
 /* eslint-disable prettier/prettier */
 
 /**

@@ -3,7 +3,7 @@ import React, { useCallback, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
-import './Styles/Modal.css'
+import '../Styles/Modal.css'
 /**
  *  Modal
  * @component

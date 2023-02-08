@@ -32,7 +32,6 @@ function Modal(_ref) {
   if (typeof keydown !== 'undefined') {
     if (keydown.active) {
       var handleKeyDown = (0, _react.useCallback)(function (e) {
-        console.log(e);
         if (e.key === keydown.key) {
           hide();
         }

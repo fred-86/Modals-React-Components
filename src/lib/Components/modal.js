@@ -27,7 +27,6 @@ export function Modal({
         if (keydown.active) {
             const handleKeyDown = useCallback(
                 (e) => {
-                    console.log(e)
                     if (e.key === keydown.key) {
                         hide()
                     }
